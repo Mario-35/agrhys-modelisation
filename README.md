@@ -12,49 +12,22 @@
     
 # <a id="sommaire">Sommaire</a>
 
-
-* [base](#base) 
-* [bdata](#bdata)
-* [bdata_s](#bdata_s)
-* [bdata_va](#bdata_va)
-* [caracteristique](#caracteristique)
-* [catchment](#catchment)
-* [cdata](#cdata) 
-* [codemd](#codemd)
-* [conditionnement](#conditionnement)
-* [data_type_hydras](#datatypehydras)
-* [dimension_temporelle](#dimensiontemporelle)
-* [echantillon](#echantillon)
-* [edata_s](#edatas)
-* [edata_va](#edatava)
-* [erreursvalidees](#erreursvalidees)
-* [famille](#famille)
-* [groupe3](#groupe3)
-* [groupemd](#groupemd)
-* [instrument](#instrument)
-* [j_bdata](#jbdata)
-* [j_edata](#jedata)
-* [j_edata_s](#jedatas)
-* [laboratoire](#laboratoire)
-* [location](#location)
-* [methodedanalyse](#methodedanalyse)
-* [mode_de_mesure](#modedemesure)
-* [regroupement](#regroupement)
-* [s_regroupement](#sregroupement)
-* [sensor](#sensor)
-* [sensor_location_link](#sensorlocationlink)
-* [sensor_suffixe](#sensorsuffixe)
-* [site](#site)
-* [site_exp](#siteexp)
-* [staff](#staff)
-* [suivi_bdata](#suivibdata)
-* [suivi_edata](#suiviedata)
-* [suivi_j_data](#suivijdata)
-* [suivibdata](#suivibdata)
-* [treedata](#treedata)
-* [variable_associee](#variableassociee)
-
-
+| | | |
+|:--:|:--:|:--:|
+| [base](#base)                               |[edata_va](#edatava)                 |[regroupement](#regroupement)|  
+| [bdata](#bdata)                             |[erreursvalidees](#erreursvalidees)  |[s_regroupement](#sregroupement)|  
+| [bdata_s](#bdatas)                          |[famille](#famille)                  |[sensor](#sensor)|
+| [bdata_va](#bdatava)                        |[groupe3](#groupe3)                  |[sensor_location_link](#sensorlocationlink)|
+| [caracteristique](#caracteristique)         |[groupemd](#groupemd)                |[sensor_suffixe](#sensorsuffixe)|
+| [catchment](#catchment)                     |[instrument](#instrument)            |[site](#site)|
+| [cdata](#cdata)                             |[j_bdata](#jbdata)                   |[site_exp](#siteexp)|
+| [codemd](#codemd)                           |[j_edata](#jedata)                   |[staff](#staff)|
+| [conditionnement](#conditionnement)         |[j_edata_s](#jedatas)                |[suivi_bdata](#suivibdata)|
+| [data_type_hydras](#datatypehydras)         |[laboratoire](#laboratoire)          |[suivi_edata](#suiviedata)|
+| [dimension_temporelle](#dimensiontemporelle)|[location](#location)                |[suivi_j_data](#suivijdata)|
+| [echantillon](#echantillon)                 |[methodedanalyse](#methodedanalyse)  |[treedata](#treedata)|
+| [edata_s](#edatas)                          |[mode_de_mesure](#modedemesure)      |[unite](#unite)|
+|                                             |                                     |[variable_associee](#variableassociee)|
 
 
 
@@ -79,7 +52,7 @@ id      |famille_id|data_type_id|location_id|sensor_location_id|staff_sample_id|
 28775384|         1|           3|         52|                69|             10|2001-02-09 12:15:00| -6.24|
 28775385|         1|           3|         52|                69|             10|2001-02-09 12:30:00| -6.19|
 
-- id : ne represente pas une donnees identifiable (ce n'est pas une cle) 
+- id : ne represente pas une donnee identifiable (ce n'est pas une cle primaire valide) 
 - famille_id : lien avec la table famille (famille des type de données)
 - data_type_id : lien avec la table data_type_hydras ** à Verifier ** (liste des type de données)
     data_type_id ne fait reference a des données inscripte dans le script 
@@ -89,11 +62,11 @@ id      |famille_id|data_type_id|location_id|sensor_location_id|staff_sample_id|
 - staff_sample_id : lien avec la table staff (Personnel = 10 car insertion auto) Comprends pas l'interet si on met 10 tout le temps ?
 
 ```
-Lors de l'import journalier des données isues d'hydras des fichiers csv identifiés Brut par leur nom.
+Lors de l'import journalier des données d'hydras des fichiers csv identifiés Brut par leur nom.
 ```
 [Retour au sommaire](#sommaire) 
 
-# <a id="bdata_s">bdata_s</a>
+# <a id="bdatas">bdata_s</a>
 
 s pour sensor ? a confirmer je n'ai pas encore trouvé la raison d'ëtre de cette table.
 
@@ -132,14 +105,6 @@ id|site_exp_id|name         |surface|country          |description              
 lieu de mesure (Bassin versant intra site_experimental)
 country aurai put être divisé.
 
-
-Markdown Ancres nommés (lien vers un fragment de page)
-
-Exemple
-#
-
-créer une destination avec
-
 [Retour au sommaire](#sommaire) 
 
 # <a id="cdata">cdata</a>
@@ -155,7 +120,11 @@ id       |famille_id|data_type_id|location_id|sensor_location_id|staff_sample_id
 données corrigées (Donnees corrigees issues du domaine corrigees de Hydras. Les donnees ont subies une correction mineure)
 
 - idem que BDATA (aucune raison de doubler)
-- code1 & code2 permetent d'identifier les raisons de la corrections.
+- code1 & code2 permetent d'identifier les raisons de la correction.
+
+```
+Lors de l'import journalier des données d'hydras des fichiers csv identifiés Corrigé par leur nom.
+```
 
 [Retour au sommaire](#sommaire) 
 
@@ -688,7 +657,7 @@ id |location_id|famille_id|data_type_id|udate              |n |
   3|          1|         1|           3|2001-08-02 00:00:00|96|
   4|          1|         1|           3|2001-08-03 00:00:00|96|
 
-[Retour au sommaire](#sommaire) b
+[Retour au sommaire](#sommaire)
 
 # <a id="suivibdata">suivibdata</a>
 
