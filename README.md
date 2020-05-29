@@ -13,7 +13,7 @@
 # <a id="sommaire">Sommaire</a>
 
 | | | |
-|:--:|:--:|:--:|
+|:--|:--|:--|
 | [base](#base)                               |[edata_va](#edatava)                 |[regroupement](#regroupement)|  
 | [bdata](#bdata)                             |[erreursvalidees](#erreursvalidees)  |[s_regroupement](#sregroupement)|  
 | [bdata_s](#bdatas)                          |[famille](#famille)                  |[sensor](#sensor)|
